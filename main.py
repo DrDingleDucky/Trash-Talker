@@ -69,16 +69,13 @@ class Main:
 
 
 def keyboard_listener(main):
-    with pynput.keyboard.Listener(
-            on_press=lambda key: main.on_press(key)) as keyboard_listener:
+    with pynput.keyboard.Listener(on_press=lambda key: main.on_press(key)) as keyboard_listener:
         keyboard_listener.join()
 
 
 def main():
     main = Main()
-    keyboard_listener_thred = threading.Thread(
-        target=keyboard_listener,
-        args=(main,))
+    keyboard_listener_thred = threading.Thread(target=keyboard_listener, args=(main,))
     keyboard_listener_thred.daemon = True
     keyboard_listener_thred.start()
     main.main_loop()
