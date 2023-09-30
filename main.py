@@ -65,7 +65,7 @@ class Main:
             self.random_phrase()
 
     def main_loop(self):
-        input("say something to quit > ")
+        input("type something to quit > ")
 
 
 def keyboard_listener(main):
