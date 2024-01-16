@@ -65,7 +65,7 @@ class Main:
             self.random_phrase()
 
     def main_loop(self):
-        input("type something to quit > ")
+        input(">>> ")
 
 
 def keyboard_listener(main):
@@ -75,9 +75,9 @@ def keyboard_listener(main):
 
 def main():
     main = Main()
-    keyboard_listener_thred = threading.Thread(target=keyboard_listener, args=(main,))
-    keyboard_listener_thred.daemon = True
-    keyboard_listener_thred.start()
+    keyboard_listener_thread = threading.Thread(target=keyboard_listener, args=(main,))
+    keyboard_listener_thread.daemon = True
+    keyboard_listener_thread.start()
     main.main_loop()
 
 
